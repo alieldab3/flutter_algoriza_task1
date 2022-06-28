@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String label;
-  final GlobalKey<FormState> formkey;
-  const PrimaryButton({Key? key, required this.label, required this.formkey})
+  // final GlobalKey<FormState>? formkey;
+  const PrimaryButton({Key? key, required this.label, /*this.formkey*/})
       : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class PrimaryButton extends StatelessWidget {
       width: double.infinity,
       height: 45,
       child: ElevatedButton(
-        onPressed: () => _saveForm(formkey),
+        onPressed: () => _saveForm(/*formkey!*/),
         child: Text(
           label,
           style: const TextStyle(fontSize: 15),
@@ -21,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
     );
   }
 
-  void _saveForm(GlobalKey<FormState> formkey) {
+  void _saveForm(/*GlobalKey<FormState> formkey*/) {
     print("Validating");
 
     //   final isValid = formkey.currentState!.validate();

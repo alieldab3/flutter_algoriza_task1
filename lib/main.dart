@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_algoriza_task1/screens/on_boarding_page.dart';
 import 'screens/register_page.dart';
 
 import 'router/app_router.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const OnBoardingPage(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
   }

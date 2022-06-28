@@ -86,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    PrimaryButton(label: "Register", formkey: _registerform),
+                    PrimaryButton(label: "Register",/* formkey: _registerform*/),
                     const SizedBox(
                       height: 15,
                     ),
