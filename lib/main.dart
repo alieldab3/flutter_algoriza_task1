@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'screens/register_page.dart';
 
 import 'router/app_router.dart';
 import 'screens/login_page.dart';
-import 'screens/on_boarding_page.dart';
 
 void main() {
   runApp(

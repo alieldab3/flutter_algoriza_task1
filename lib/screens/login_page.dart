@@ -1,96 +1,93 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/google_button.dart';
-import '../widgets/horizontal_divider.dart';
+import '../widgets/auth/top_image.dart';
+import '../widgets/auth/welcome_headline.dart';
+import '../widgets/auth/title_help_row.dart';
+import '../widgets/auth/phone_field.dart';
+import '../widgets/auth/primary_button.dart';
+import '../widgets/auth/horizontal_divider.dart';
+import '../widgets/auth/google_button.dart';
+import '../widgets/auth/secondary_button.dart';
+import '../widgets/auth/disclaimer.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<FormState> _loginform = GlobalKey<FormState>();
+
+  @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double keyboardHeight = MediaQuery.of(context).viewInsets.bottom + 10;
+
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 150,
-            ),
-            const Text(
-              "Welcome to Fashion Daily",
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Sign in",
-                  style: TextStyle(color: Colors.black, fontSize: 40),
-                ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.help,
-                        textDirection: TextDirection.ltr),
-                    label: const Text(
-                      "Help",
-                      style: TextStyle(color: Colors.blue, fontSize: 15),
+      body: Form(
+        key: _loginform,
+        child: SizedBox(
+          height: screenHeight - keyboardHeight,
+          child: ListView(
+            children: [
+              const TopImage(
+                height: 140,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const WelcomeHeadline(),
+                    const SizedBox(
+                      height: 10,
                     ),
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text("Phone"),
-            const SizedBox(
-              height: 30,
-            ),
-            SizedBox(
-                width: double.infinity,
-                height: 45,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(fontSize: 15),
-                    ))),
-            const SizedBox(
-              height: 30,
-            ),
-            const HorizontalDivider(label: "Or"),
-            const SizedBox(
-              height: 30,
-            ),
-            GoogleButton(
-              onPressed: () {},
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Don't have any account?"),
-                TextButton(onPressed: () {}, child: const Text("Register here"))
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              "Use the application according to policy rules. Any kinds of violations will be subject to sanctions.",
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 13.5),
-            )
-          ],
+                    const TitleHelpRow(label: "Sign in"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const PhoneField(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    PrimaryButton(label: "Sign in", formkey: _loginform),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const HorizontalDivider(label: "Or"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    GoogleButton(
+                      onPressed: () {},
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SecondaryButton(
+                        firstLabel: "Don't have any account?",
+                        secondLabel: "Register here",
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/register');
+                        }),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Disclaimer(
+                      text:
+                          "Use the application according to policy rules. Any kinds of violations will be subject to sanctions.",
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
