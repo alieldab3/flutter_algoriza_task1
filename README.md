@@ -3,7 +3,7 @@
 Implementing On boarding page, Login page, and Register page based on given designs
 
 ## Full Demo
-<img src="https://github.com/alieldab3/flutter_algoriza_task1/blob/main/demo.gif" width="300"/>
+<img src="https://github.com/alieldab3/flutter_algoriza_task1/blob/master/demo.gif" width="300"/>
 
 
 
