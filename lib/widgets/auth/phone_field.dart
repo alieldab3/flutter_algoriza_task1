@@ -32,12 +32,12 @@ class PhoneField extends StatelessWidget {
                 borderSide: const BorderSide(color: Colors.grey),
               ),
             ),
-            validator: (PhoneNumber? value) {
-              if (value!.number.length < 5) {
-                return 'Enter a valid number';
-              }
-              return null;
-            },
+            // validator: (PhoneNumber? value) {
+            //   if (value!.number.length < 5) {
+            //     return 'Enter a valid number';
+            //   }
+            //   return null;
+            // },
             onChanged: (phone) {
               print(phone.completeNumber);
             },

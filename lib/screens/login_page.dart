@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
           child: ListView(
             children: [
               const TopImage(
-                height: 140,
+                // height: 140,
               ),
               const SizedBox(
                 height: 20,
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     SecondaryButton(
-                        firstLabel: "Don't have any account?",
+                        firstLabel: "Don't have an account?",
                         secondLabel: "Register here",
                         onPressed: () {
                           Navigator.of(context).pushNamed('/register');

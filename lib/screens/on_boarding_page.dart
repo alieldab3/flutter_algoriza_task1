@@ -52,7 +52,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       globalFooter: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 16, right: 16),
+            margin: const EdgeInsets.only(left: 24, right: 24),
             width: double.infinity,
             height: 45,
             child: ElevatedButton(

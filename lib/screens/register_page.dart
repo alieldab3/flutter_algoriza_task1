@@ -46,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: ListView(
             children: [
               const TopImage(
-                height: 70,
+                height: 200,
               ),
               const SizedBox(
                 height: 10,
@@ -86,7 +86,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    PrimaryButton(label: "Register",/* formkey: _registerform*/),
+                    PrimaryButton(
+                      label: "Register", /* formkey: _registerform*/
+                    ),
                     const SizedBox(
                       height: 15,
                     ),
@@ -132,7 +134,6 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
         onPressed: () => Navigator.of(context).pop(),
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
     );
   }
