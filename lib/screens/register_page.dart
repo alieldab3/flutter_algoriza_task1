@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/auth/custom_text_field.dart';
 
 import '../widgets/auth/top_image.dart';
 import '../widgets/auth/welcome_headline.dart';
@@ -10,6 +9,7 @@ import '../widgets/auth/horizontal_divider.dart';
 import '../widgets/auth/google_button.dart';
 import '../widgets/auth/secondary_button.dart';
 import '../widgets/auth/disclaimer.dart';
+import '../widgets/auth/custom_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -27,26 +27,15 @@ class _RegisterPageState extends State<RegisterPage> {
     final double keyboardHeight = MediaQuery.of(context).viewInsets.bottom + 10;
 
     return Scaffold(
-      // extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //   iconTheme: IconThemeData(
-      //     color: Colors.black,
-      //   ),
-      // leading: IconButton(
-      //   icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black),
-      //   onPressed: () => Navigator.of(context).pop(),
-      // ),
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      // ),
       body: Form(
         key: _registerform,
         child: SizedBox(
           height: screenHeight - keyboardHeight,
           child: ListView(
             children: [
-              const TopImage(
-                height: 200,
+              TopImage(
+                height: MediaQuery.of(context).size.height / 9,
+                // height: 200,
               ),
               const SizedBox(
                 height: 10,
@@ -86,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    PrimaryButton(
+                    const PrimaryButton(
                       label: "Register", /* formkey: _registerform*/
                     ),
                     const SizedBox(

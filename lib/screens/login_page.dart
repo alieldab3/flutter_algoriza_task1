@@ -32,8 +32,8 @@ class _LoginPageState extends State<LoginPage> {
           height: screenHeight - keyboardHeight,
           child: ListView(
             children: [
-              const TopImage(
-                // height: 140,
+              TopImage(
+                height: MediaQuery.of(context).size.height / 4,
               ),
               const SizedBox(
                 height: 20,
@@ -56,7 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    PrimaryButton(label: "Sign in",/* formkey: _loginform*/),
+                    const PrimaryButton(
+                      label: "Sign in", /* formkey: _loginform*/
+                    ),
                     const SizedBox(
                       height: 20,
                     ),

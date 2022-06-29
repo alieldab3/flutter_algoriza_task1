@@ -27,68 +27,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: Colors.white,
-      globalHeader: Align(
-        alignment: Alignment.topRight,
-        child: SafeArea(
-          child: Padding(
-              padding: const EdgeInsets.only(top: 16, right: 16),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(255, 250, 242, 231),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    elevation: 0),
-                child: const Text(
-                  "Skip",
-                  style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/login');
-                },
-              )),
-        ),
-      ),
-      globalFooter: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(left: 24, right: 24),
-            width: double.infinity,
-            height: 45,
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(255, 81, 175, 171),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                child: const Text(
-                  'Get Started',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/login');
-                }),
-          ),
-          Container(
-              margin: const EdgeInsets.only(bottom: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Don't have an account?"),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/register');
-                      },
-                      child: const Text(
-                        "Sign Up",
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 81, 175, 171)),
-                      ))
-                ],
-              )),
-        ],
-      ),
+      globalHeader: const SkipButton(),
+      globalFooter: const CustomFooter(),
       pages: [
         PageViewModel(
           title: "Get food delivery to your doorstep asap",
@@ -151,6 +91,88 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
       ),
+    );
+  }
+}
+
+class SkipButton extends StatelessWidget {
+  const SkipButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topRight,
+      child: SafeArea(
+        child: Padding(
+            padding: const EdgeInsets.only(top: 16, right: 16),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(255, 250, 242, 231),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  elevation: 0),
+              child: const Text(
+                "Skip",
+                style: TextStyle(color: Colors.black),
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/login');
+              },
+            )),
+      ),
+    );
+  }
+}
+
+class CustomFooter extends StatelessWidget {
+  const CustomFooter({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.only(left: 24, right: 24),
+          width: double.infinity,
+          height: 45,
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 81, 175, 171),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+              child: const Text(
+                'Get Started',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/login');
+              }),
+        ),
+        Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Don't have an account?"),
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/register');
+                    },
+                    child: const Text(
+                      "Sign Up",
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 81, 175, 171)),
+                    ))
+              ],
+            )),
+      ],
     );
   }
 }
