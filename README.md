@@ -5,7 +5,7 @@ Implementing On boarding page, Login page, and Register page based on given desi
 ## Full Demo
 ![Full Demo](https://github.com/alieldab3/flutter_algoriza_task1/blob/main/demo.gif)
 
-[![Demo CountPages alpha](https://github.com/alieldab3/flutter_algoriza_task1/blob/main/demo.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
+<img src="https://github.com/alieldab3/flutter_algoriza_task1/blob/main/demo.gif" width="250" height="250"/>
 
 
 
